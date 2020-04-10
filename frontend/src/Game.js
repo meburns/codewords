@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Grid, Card, Button } from "@material-ui/core";
-import { initGame } from "./data.js";
+import { getGame } from "./data.js";
 
-function App() {
+function Game({ match }) {
   const [background, setBackground] = useState("old-wood.jpg");
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    initGame(setData);
-  }, []);
+    getGame(match.params.identity, setData);
+  }, [match]);
 
   function cycleBackground() {
     if (background === "old-wood.jpg") {
@@ -100,4 +100,4 @@ function App() {
   }
 }
 
-export default App;
+export default Game;
