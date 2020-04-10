@@ -31,7 +31,7 @@ const createGame = (request, response) => {
     if (error) {
       throw error
     }
-    response.status(201).send(`Game added with identity: ${identity}`)
+    response.status(201).send(`${identity}`)
   })
 }
 
